@@ -23,7 +23,6 @@ class EvcPlayer(): SurfaceHolder.Callback {
             prepareNative(it)
         }
     }
-    /* TODO 第二节课新增 --- end */
     /**
      * set SurfaceView
      * @param surfaceView
@@ -36,7 +35,6 @@ class EvcPlayer(): SurfaceHolder.Callback {
         surfaceHolder?.addCallback(this) // 监听
     }
 
-    /* TODO 第二节课新增 --- start */
     /**
      * 给jni反射调用的 准备错误了
      */
@@ -46,7 +44,6 @@ class EvcPlayer(): SurfaceHolder.Callback {
         }
     }
 
-    // TODO 第七节课增加 2.1
     /**
      * 给jni反射调用的
      */
@@ -131,14 +128,14 @@ class EvcPlayer(): SurfaceHolder.Callback {
     }
 
 
-    // TODO >>>>>>>>>>> 下面是native函数区域
+    // 下面是native函数区域
     private external fun prepareNative(dataSource: String)
     private external fun startNative()
     private external fun stopNative()
     private external fun releaseNative()
-    private external fun setSurfaceNative(surface: Surface) // TODO 第三节课增加的
-    private external fun getDurationNative(): Int // TODO 第七节课增加 获取总时长
-    private external fun seekNative(progress: Int) // TODO 第七节课增加 获取总时长
+    private external fun setSurfaceNative(surface: Surface)
+    private external fun getDurationNative(): Int
+    private external fun seekNative(progress: Int)
 
 
 }

@@ -69,14 +69,12 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
                     //
                     runOnUiThread {
                         if (duration!=0){
-                            // TODO 播放信息 动起来
                             // progress:C++层 ffmpeg获取的当前播放【时间（单位是秒 80秒都有，肯定不符合界面的显示） -> 1分20秒】
                             binding.tvTime.setText(
                                 getMinutes(progress) + ":" + getSeconds(progress)
                                         + "/" +
                                         getMinutes(duration) + ":" + getSeconds(duration)
                             )
-                            // TODO 拖动条 动起来 seekBar相对于总时长的百分比
                             // progress == C++层的 音频时间搓  ----> seekBar的百分比
                             // seekBar.setProgress(progress * 100 / duration 以秒计算seekBar相对总时长的百分比);
                             binding.seekBar.setProgress(progress * 100 / duration)
@@ -98,8 +96,6 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         } else "" + seconds
     }
 
-    // TODO >>>>>>>>>>>>>>>>>>>>>>>>>>>
-    // TODO 第七节课增加 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // 119 ---> 1.多一点点
     private fun getMinutes(duration: Int): String? { // 给我一个duration，转换成xxx分钟
         val minutes = duration / 60
